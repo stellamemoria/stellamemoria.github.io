@@ -1,0 +1,128 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.survey-button {
+    position: fixed;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 100px;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 100;
+    transition: background-color 0.3s;
+}
+
+.survey-button:hover {
+    background-color: #0056b3; /* 호버 시 색상 변경 */
+}
+
+.image-section {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-image {
+    width: 70%;
+    height: auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.pop-image {
+    position: absolute;
+    width: 70%;
+    height: auto;
+    left: -100px;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+/* 활성화된 이미지에 적용될 클래스 */
+.main-image.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pop-image.active {
+    opacity: 1;
+    left: 15%; /* 팝 이미지 최종 위치 */
+}
+
+/* 꽃이 피는 듯한 애니메이션을 위한 스타일 수정 */
+.pop-image-bloom {
+    transform: scale(0);
+    left: 15% !important; /* 다른 pop 이미지들과 같은 위치 */
+    transform-origin: center;
+    position: absolute;
+    z-index: 2; /* main 이미지 위에 표시되도록 */
+}
+
+.pop-image-bloom.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* 슬라이드 애니메이션을 위한 스타일은 그대로 유지 */
+.pop-image-slide {
+    transition-delay: 0.5s;
+    z-index: 1; /* bloom 이미지 아래에 위치하도록 */
+}
+
+/* 새로 추가된 footer 스타일 */
+footer {
+    background-color: #999999;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+}
+
+.footer-container {
+    width: 90%;
+    margin: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.copyright p {
+    margin: 5px 0;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info a i {
+    color: white;
+    margin-right: 10px;
+    width: 16px; /* 아이콘 너비 고정 */
+}
