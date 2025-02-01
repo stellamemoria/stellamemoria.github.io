@@ -219,7 +219,7 @@ footer {
 
     /* 푸터 스타일 */
     footer {
-        height: 13vh !important;
+        height: 15vh !important;
         width: 100% !important;
         position: fixed !important;
         bottom: 0 !important;
@@ -235,24 +235,24 @@ footer {
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;
-        padding: 10px 30px !important; /* 좌우 패딩 추가 */
+        padding: 20px 30px 40px !important; /* 하단 패딩 10px로 조정 */
         position: relative !important;
     }
 
     /* 저작권 텍스트 */
     .copyright {
-        font-size: 12px !important;
-        text-align: left !important; /* 중앙에서 왼쪽으로 변경 */
+        font-size: 10px !important;
+        text-align: left !important;
         order: 1 !important;
         margin-top: 20px !important;
     }
 
     /* 연락처 정보 */
     .contact-info {
-        font-size: 12px !important;
+        font-size: 10px !important;
         text-align: center !important;
         order: 2 !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 10px !important; /* 하단 마진도 10px로 조정 */
     }
 
     /* 설문조사 버튼 */
@@ -260,7 +260,7 @@ footer {
         position: fixed !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        bottom: 10vh !important;
+        bottom: 12vh !important; /* 5vh에서 8vh로 수정하여 메뉴 버튼과 겹치지 않게 */
         z-index: 1000 !important;
     }
 }
