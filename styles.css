@@ -1,3 +1,15 @@
+/* 기본 스타일 재설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
 .container {
     width: 100%;
     min-height: 100vh;
@@ -125,4 +137,157 @@ footer {
     color: white;
     margin-right: 10px;
     width: 16px; /* 아이콘 너비 고정 */
+}
+
+/* 모바일 섹션 기본 숨김 처리 */
+.mobile-sections {
+    display: none;
+}
+
+/* 태블릿 & 모바일 공통 스타일 */
+@media screen and (max-width: 1024px) {
+    /* 전체 초기화 */
+    * {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* PC 버전 완전히 숨기기 - 모든 관련 요소 포함 */
+    #fullpage,
+    .section,
+    .section1,
+    .section2,
+    .section3,
+    .section4,
+    .section5,
+    .section6,
+    .section7,
+    .section8,
+    .main-image,
+    .pop-image,
+    .pop-image-1,
+    .pop-image-2 {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        position: absolute !important;
+        z-index: -9999 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+    }
+
+    /* body 설정 */
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        min-height: 100vh !important;
+    }
+
+    /* 모바일 버전 컨테이너 */
+    .mobile-sections {
+        display: block !important;
+        width: 100% !important;
+        padding-top: 10vh !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+    }
+
+    /* picture 태그 설정 */
+    picture.mobile-image {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* 이미지 설정 */
+    picture.mobile-image img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* 마지막 이미지 하단 여백 */
+    .mobile-sections picture.mobile-image:last-child {
+        margin-bottom: 60vh !important; /* 30vh(여백) + 30vh(푸터 높이) */
+    }
+
+    /* 푸터 스타일 */
+    footer {
+        height: 13vh !important;
+        width: 100% !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        z-index: 100 !important;
+        background-color: #999999 !important; /* 배경색 명시적 지정 */
+    }
+
+    /* 푸터 컨테이너 */
+    .footer-container {
+        height: 100% !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        padding: 10px 30px !important; /* 좌우 패딩 추가 */
+        position: relative !important;
+    }
+
+    /* 저작권 텍스트 */
+    .copyright {
+        font-size: 12px !important;
+        text-align: left !important; /* 중앙에서 왼쪽으로 변경 */
+        order: 1 !important;
+        margin-top: 20px !important;
+    }
+
+    /* 연락처 정보 */
+    .contact-info {
+        font-size: 12px !important;
+        text-align: center !important;
+        order: 2 !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 설문조사 버튼 */
+    .survey-button {
+        position: fixed !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        bottom: 10vh !important;
+        z-index: 1000 !important;
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width: 768px) {
+    /* 이미지 컨테이너 */
+    .main-image {
+        width: 100%;
+    }
+
+    /* 메인 이미지와 팝업 이미지 */
+    .main-image img,
+    .pop-image,
+    .pop-image-1,
+    .pop-image-2 {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 1번 섹션 상단 여백 */
+    .section1 {
+        margin-top: 30vh;
+    }
+
+    /* 8번 섹션 하단 여백 */
+    .section8 {
+        margin-bottom: 30vh;
+    }
 }

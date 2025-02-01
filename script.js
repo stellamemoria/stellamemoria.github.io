@@ -87,4 +87,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     checkScroll();
+
+    // PC 버전 fullpage 초기화 (기존 코드 유지)
+    if (window.innerWidth > 1024) {
+        new fullpage("#fullpage", {
+            // ... 기존 설정 유지
+        });
+    }
+
+    // 모바일/태블릿 버전 버튼 이벤트
+    if (window.innerWidth <= 1024) {
+        const surveyButton = document.querySelector(".survey-button");
+        const footer = document.querySelector("footer");
+        let isButtonMoved = false;
+
+        window.addEventListener("scroll", () => {
+            const footerRect = footer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (footerRect.top <= windowHeight && !isButtonMoved) {
+                // 푸터가 뷰포트에 보이면 버튼을 30vh 위치로 이동
+                surveyButton.style.bottom = "70vh"; // 화면 높이의 30vh 위치로
+                isButtonMoved = true;
+            } else if (footerRect.top > windowHeight && isButtonMoved) {
+                // 푸터가 뷰포트에서 벗어나면 원래 위치로
+                surveyButton.style.bottom = "15vh";
+                isButtonMoved = false;
+            }
+        });
+    }
 });
