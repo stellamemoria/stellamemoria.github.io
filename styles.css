@@ -214,7 +214,7 @@ footer {
 
     /* 마지막 이미지 하단 여백 */
     .mobile-sections picture.mobile-image:last-child {
-        margin-bottom: 60vh !important; /* 30vh(여백) + 30vh(푸터 높이) */
+        margin-bottom: 20vh !important; /* 30vh(여백) + 30vh(푸터 높이) */
     }
 
     /* 푸터 스타일 */
@@ -234,8 +234,8 @@ footer {
         width: 100% !important;
         display: flex !important;
         flex-direction: column !important;
-        justify-content: space-between !important;
-        padding: 20px 30px 40px !important; /* 하단 패딩 10px로 조정 */
+        justify-content: flex-start !important;
+        padding: 10px 30px 10px !important;
         position: relative !important;
     }
 
@@ -244,7 +244,8 @@ footer {
         font-size: 10px !important;
         text-align: left !important;
         order: 1 !important;
-        margin-top: 20px !important;
+        margin-top: 10px !important;
+        margin-bottom: 15px !important;
     }
 
     /* 연락처 정보 */
@@ -252,16 +253,19 @@ footer {
         font-size: 10px !important;
         text-align: center !important;
         order: 2 !important;
-        margin-bottom: 10px !important; /* 하단 마진도 10px로 조정 */
+        margin-bottom: 10px !important;
     }
 
     /* 설문조사 버튼 */
     .survey-button {
         position: fixed !important;
         left: 50% !important;
-        transform: translateX(-50%) !important;
-        bottom: 12vh !important; /* 5vh에서 8vh로 수정하여 메뉴 버튼과 겹치지 않게 */
+        transform: translateX(-50%) scale(0.5) !important;
+        bottom: 11vh !important;
         z-index: 1000 !important;
+        transform-origin: center center !important;
+        font-size: 24px !important;
+        padding: 15px 30px !important;
     }
 }
 
